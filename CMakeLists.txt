@@ -37,21 +37,21 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 nyu_install_sv(
-  EXPORT nyusyncTargets
+  EXPORT nyu-syncTargets
   TARGETS sync
   NAMESPACE nyu::
-  EXPORT_DEST ${CMAKE_INSTALL_DATADIR}/nyusync
-  SV_DEST ${CMAKE_INSTALL_DATADIR}/nyusync/rtl
+  EXPORT_DEST ${CMAKE_INSTALL_DATADIR}/nyu-sync
+  SV_DEST ${CMAKE_INSTALL_DATADIR}/nyu-sync/rtl
 )
 
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/nyusync-config-version.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/nyu-sync-config-version.cmake
   COMPATIBILITY ExactVersion
   ARCH_INDEPENDENT
 )
 
 install(FILES
-  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/nyusync-config.cmake
-  ${CMAKE_CURRENT_BINARY_DIR}/nyusync-config-version.cmake
-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/nyusync
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/nyu-sync-config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/nyu-sync-config-version.cmake
+  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/nyu-sync
 )
