@@ -1,4 +1,3 @@
-# NYU ProcDesign Development Template
+# NYU Sync!
 
-A template for doing SystemVerilog development for the NYU Processor Design
-team.
+It syncies the bits!
