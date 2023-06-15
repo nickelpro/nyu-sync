@@ -1,8 +1,8 @@
 #include <catch2/catch_test_macros.hpp>
-#include <VModule.h>
+#include <VNyuSync.h>
 
 
 TEST_CASE("Test") {
-  VModule model;
+  VNyuSync model;
   REQUIRE(1);
 }

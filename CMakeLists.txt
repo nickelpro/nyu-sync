@@ -20,11 +20,11 @@ add_custom_target(UpdateVcpkgBaseline
   ${VCPKG_ROOT_DIR}/vcpkg x-update-baseline
 )
 
-project(project VERSION 1.1.0)
+project(nyu-sync VERSION 1.0.0)
 
 find_package(nyu-cmake CONFIG REQUIRED)
 
-add_library(module INTERFACE)
+add_library(sync INTERFACE)
 
 add_subdirectory(rtl)
 
@@ -33,25 +33,25 @@ if(NYU_BUILD_TESTS)
   add_subdirectory(dv)
 endif()
 
-# include(CMakePackageConfigHelpers)
-# include(GNUInstallDirs)
-#
-# nyu_install_sv(
-#   EXPORT projectTargets
-#   TARGETS
-#   NAMESPACE nyu::
-#   EXPORT_DEST ${CMAKE_INSTALL_DATADIR}/project
-#   SV_DEST ${CMAKE_INSTALL_DATADIR}/project/rtl
-# )
-#
-# write_basic_package_version_file(
-#   ${CMAKE_CURRENT_BINARY_DIR}/project-config-version.cmake
-#   COMPATIBILITY ExactVersion
-#   ARCH_INDEPENDENT
-# )
-#
-# install(FILES
-#   ${CMAKE_CURRENT_SOURCE_DIR}/cmake/project-config.cmake
-#   ${CMAKE_CURRENT_BINARY_DIR}/project-config-version.cmake
-#   DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/project
-# )
+include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
+
+nyu_install_sv(
+  EXPORT nyusyncTargets
+  TARGETS sync
+  NAMESPACE nyu::
+  EXPORT_DEST ${CMAKE_INSTALL_DATADIR}/nyusync
+  SV_DEST ${CMAKE_INSTALL_DATADIR}/nyusync/rtl
+)
+
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/nyusync-config-version.cmake
+  COMPATIBILITY ExactVersion
+  ARCH_INDEPENDENT
+)
+
+install(FILES
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/nyusync-config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/nyusync-config-version.cmake
+  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/nyusync
+)

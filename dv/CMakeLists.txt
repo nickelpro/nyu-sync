@@ -3,11 +3,11 @@ find_package(nyu-util REQUIRED CONFIG)
 
 add_executable(tests)
 target_sources(tests PRIVATE
-  Module.cpp
+  NyuSync.cpp
 )
-nyu_link_sv(tests PRIVATE module)
+nyu_link_sv(tests PRIVATE sync)
 nyu_target_verilate(tests
-  TOP_MODULES Module
+  TOP_MODULES NyuSync
   ARGS COVERAGE
 )
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain nyu::covrecorder)

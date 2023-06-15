@@ -1,8 +1,8 @@
 {
-  "name": "nyu-template",
+  "name": "nyu-sync",
   "version": "1.0.0",
-  "description": "NYU Processor Design's Template Repo",
-  "homepage": "https://github.com/NYU-Processor-Design/component-template",
+  "description": "NYU Sync",
+  "homepage": "https://github.com/nickelpro/nyu-sync",
   "maintainers": [],
   "license": "CC0-1.0",
   "dependencies": [
